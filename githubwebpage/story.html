@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+    function myFunction() {
+        document.getElementById("demo").innerHTML = txt;
+    }
+    var txt = 'Lorem ipsum dummy text blabla.';
+    </script>
+    <style>
+    html,body{
+  height:100%;
+}
+
+body{
+  margin:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+canvas{
+  border:0px solid lightgray;
+  box-shadow: 1px 1px 4px rgba(0,0,0,0.2);
+}
+html {
+  height: 100%;
+}
+
+body {
+  -webkit-user-select: none;
+  user-select: none;
+  background-color: #222226;
+  height: 100%;
+  font-family: roboto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.card-object {
+  display: grid;
+  width: 450px;
+  grid-template: "header header"
+                  "aside  main"
+                 "foot  foot";
+  font-family: courier;
+  font-size: 24px;
+  line-height: 40px;
+  filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.8));
+}
+
+.card-object header {
+  grid-column: header;
+  height: 40px;
+  background-image: url(https://image.ibb.co/b49eUb/dechirure.png);
+  background-repeat: repeat;
+}
+
+.card-object aside {
+  grid-area: aside;
+  width: 40px;
+  background-image: url(https://image.ibb.co/fpgtpb/trou.png);
+  background-repeat: repeat;
+}
+
+.card-object main {
+  grid-area: main;
+  background-color: white;
+}
+
+.card-object main .message{
+    background-image: url(https://image.ibb.co/iA4Dpb/line.png);
+  background-repeat: repeat;
+  background-position: 0 -10px;
+  margin: 20px 20px 0 20px;
+}
+
+.card-object footer {
+  grid-column: foot;
+  text-align: right;
+  background-color: white;
+  padding: 5px 20px 20px 0;
+  border-radius: 0 0 5px 5px;
+}
+
+.author::before{
+  content: "- ";
+}
+
+.rotate{
+  animation: rotate 4s infinite ease-in-out;
+}
+
+.floating{
+  animation: float 6s infinite ease-in-out;
+}
+
+@keyframes rotate{
+  0% {
+  transform: perspective(1000px) rotateY(4deg);
+  }
+  50%{
+  transform: perspective(1000px) rotateX(-5deg);
+  }
+  100% {
+  transform: perspective(1000px) rotateY(4deg);
+  }
+}
+
+@keyframes float{
+  0% {
+  transform: perspective(1000px) translateY(0px) rotateX(5deg);
+  }
+  50%{
+  transform: perspective(1000px) translateY(10px) rotateX(-5deg);
+  }
+  100% {
+  transform: perspective(1000px) translateY(0px) rotateX(5deg);
+  }
+}
+.close_btn {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  background: #26262f;
+  color: red;
+  display: inline-block;
+  padding: 1em;
+  font-size: 1.4rem;
+  letter-spacing: 0.15em;
+  font-weight: 700;
+  text-transform: uppercase;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  right: 20px;
+  top:20px;
+}
+body{
+  position: relative;
+  font-family: "URW Chancery L", cursive;
+  font-size: 1.75rem;
+  line-height: 1.5;
+}
+p{
+  color:"white";
+}
+    </style>
+  </head>
+
+  <body>
+    <h1>Chronicles</h1>
+    <p>Your are a young mage that lives in a small sucluded town at the edge of the kingdom of Aurelia. You own a little magic shop that gets a lot of customers and requests. You train under an old mage named Arcus. This morning, you found a book left on the table with a note on the top.
+      <!-- <button>
+    <div> -->
+      <!-- <h3>information section<h3>
+    </div> -->
+    <!-- It woulb be cool if you could make it so that section thing was clearly indicated and it had a really responsive part -->
+<!-- I think that the twist will be that it will be the queen outwardly overly supportive but really complacent to the king but she really wanted him overthrown because he is cruel and does not listen to intellegent people and stuff -->
+    <div class="floating">
+    <div class="card-object rotate">
+    	<header></header>
+    	<aside></aside>
+    	<main><blockquote class="message">Can you do some spellwork on my diary so that my brother can't get into it.</blockquote></main>
+    	<footer class="author">Ruby</footer>
+    </div>
+    </div>
+<!-- loading sign should be it opening the pocketwatch -->
+    <!-- <button type="button" onclick="moveover()">Open your spellbook</button> -->
+    <!-- spellbook will open -->
+    <p>You begin carving the rune in the front of the book with ink that you keep on the desk. After you are done, you set it aside to dry.</p>
+    <p>You were sitting at the reception table in the front when you heard trumpets outside in the square.</p>
+    <p>Something important is about to happen. You choose to</p>
+    <button>stay in your shop.</button>
+    <p id="stay_inside">If it was something important, you will hear about it later.</p>
+    <button>go outside to here the news.</button>
+    <p>You put down the book you are reading and head outside. To your suprise, an ornate
+  </body>
+    <!-- i will make it so that you can choose what your focus is -->
+    <!-- maybe this should be an academy -->
+    <!-- that might be too hogwarts -->
+</html>
+<!-- The notepage graphic comes from https://codepen.io/Gthibaud/pen/EbzErW -->
